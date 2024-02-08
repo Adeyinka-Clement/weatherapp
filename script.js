@@ -25,6 +25,13 @@ const blue = document.getElementById("04")
 
          Default.addEventListener("click", (e)=>{
 	    div.innerHTML = `Click on the button above for random colors.`
+        let first = Math.round(Math.random()*255)
+        let snd =  Math.round(Math.random() *255)
+        let third = Math.round(Math.random()*255)
+        lastinp1.value = first
+        lastinp2.value = snd
+        lastinp3.value = third
+        document.body.style.backgroundColor = `rgb(${lastinp1.value}, ${lastinp2.value}, ${lastinp3.value})`
 		if(e.target.checked === true){
         var btn1 = document.getElementById("change")
         btn1.addEventListener("click",(now)=>{
@@ -55,6 +62,10 @@ const blue = document.getElementById("04")
        
 
 green.addEventListener("click", (e)=>{
+        lastinp1.value = 0
+        lastinp2.value = 255
+        lastinp3.value = 0
+        document.body.style.backgroundColor = `rgb(${lastinp1.value}, ${lastinp2.value}, ${lastinp3.value})`
         console.log(e.target.checked);
         document.body.style.background = "green"
         div.innerHTML = `Try several set of <h5 id="g">Green</h5> colors by clicking the buttton above.`
@@ -76,9 +87,12 @@ green.addEventListener("click", (e)=>{
 
 
 red.addEventListener("click", (e)=>{
+        lastinp1.value = 255
+        lastinp2.value = 0
+        lastinp3.value = 0
+        document.body.style.backgroundColor = `rgb(${lastinp1.value}, ${lastinp2.value}, ${lastinp3.value})`
         console.log(e.target.checked);
         div.innerHTML = `Try several set of <br/><h5 id="r">Red</h5> colors by clicking the button above.`
-
         document.body.style.background = "red"
         if(e.target.checked === true){
             var btn2 = document.getElementById("change")
@@ -98,7 +112,11 @@ red.addEventListener("click", (e)=>{
 
 
 blue.addEventListener("click", (e)=>{
-    div.innerHTML = `Try several set of <h5 id="b">Blue</h5> colors by clicking the button above.`
+        lastinp1.value = 0
+        lastinp2.value = 0
+        lastinp3.value = 255
+        document.body.style.backgroundColor = `rgb(${lastinp1.value}, ${lastinp2.value}, ${lastinp3.value})`
+        div.innerHTML = `Try several set of <h5 id="b">Blue</h5> colors by clicking the button above.`
         console.log(e.target.checked);
         document.body.style.background = "blue"
         if(e.target.checked === true){
@@ -116,28 +134,35 @@ blue.addEventListener("click", (e)=>{
         
     }
 })
-const result = document.getElementById("lastinp1")
-const result2 = document.getElementById("lastinp2")
-const result3 = document.getElementById("lastinp3")
-let one;
-let two;
-let three;
+
+
+
+window.addEventListener('load', function() {
+    one = Number(document.getElementById("lastinp1").value);
+    two = Number(document.getElementById("lastinp2").value);
+    three = Number(document.getElementById("lastinp3").value);
+    show(); // Update the color initially
+});
+
+const result = document.getElementById("lastinp1");
+const result2 = document.getElementById("lastinp2");
+const result3 = document.getElementById("lastinp3");
 
 result.addEventListener("input", (event) => {
     one = event.target.valueAsNumber;
-    show()
+    show();
 });
 
 result2.addEventListener("input", (event) => {
     two = event.target.valueAsNumber;
-    show()
+    show();
 });
 
 result3.addEventListener("input", (event) => {
     three = event.target.valueAsNumber;
-    show()
+    show();
 });
 
-function show(){
-    document.body.style.backgroundColor = `rgb(${one}, ${two}, ${three})`
+function show() {
+    document.body.style.backgroundColor = `rgb(${one}, ${two}, ${three})`;
 }
