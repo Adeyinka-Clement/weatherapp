@@ -166,3 +166,12 @@ result3.addEventListener("input", (event) => {
 function show() {
     document.body.style.backgroundColor = `rgb(${one}, ${two}, ${three})`;
 }
+
+setTimeout(function() {
+    var content = document.getElementById('content');
+    content.style.display = 'none';
+    select.style.float = "right"
+    select.style.marginTop = "6 vh"
+}, 8000);
+
+

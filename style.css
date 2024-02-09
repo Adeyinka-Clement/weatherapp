@@ -12,6 +12,10 @@ body{
   display: flex;
 
 }
+
+  .button{
+    float: right;
+  }
   p{
 	  display: inline !important;
 	  color: white ;
@@ -28,7 +32,7 @@ body{
 
 }
 #center{
-  margin-top: 28vh;
+  margin-top: 20vh;
   background: rgba(0, 0, 0, 0.336); /* This is the color F5A454 with 10% opacity */
   padding: 50px;
   border-radius: 30px;
@@ -113,7 +117,10 @@ button{
 
 
 
-
+.button{
+  float: right !important;
+  position: absolute !important;
+}
 
 
 
@@ -358,7 +365,7 @@ button{
     }
 	#center{
 	margin-left: 55px;
-	margin-top: 50px;
+	margin-top: 40px;
 	padding: 5px !important;
 	padding-top: 50px !important;
 	padding-bottom: 50px !important;
@@ -366,7 +373,7 @@ button{
 
   }
   #select{
-	margin-top: 5vh;
+	margin-top: 9vh;
 	padding: 0px !important;
 	 
   }
@@ -381,5 +388,98 @@ button{
 	  display: inline !important;
 	  color: white ;
   }
+  .button{
+    float: right;
+  }
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .button {
+    width: 200px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0px 15px;
+    background: rgba(0, 0, 0, 0.336); /* This is the color F5A454 with 10% opacity */
+    border-radius: 10px;
+    color: white;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    transition-duration: 0.2s;
+  }
+  small{
+    font-size: 11px !important;
+    font-weight: 600;
+  }
+  .dot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: rgb(194, 3, 3);
+    border-radius: 100%;
+  }
+  .bell {
+    width: 33px;
+  }
+  
+  .bell path {
+    fill: rgb(0, 206, 62);
+  }
+  
+  .arrow {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button:hover {
+    background-color: rgb(77, 77, 77);
+    transition-duration: 0.2s;
+  }
+  
+  .button:hover .arrow {
+    animation: slide-right 1s infinite;
+  }
+  /* arrow animation */
+  @keyframes slide-right {
+    0% {
+      transform: translateX(0);
+    }
+  
+    50% {
+      transform: translateX(-5px);
+    }
+  }
+  
+  .button:active {
+    transform: translate(1px, 1px);
+    transition-duration: 0.2s;
+  }
+  
